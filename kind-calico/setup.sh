@@ -1,10 +1,13 @@
-# install deps# 
+#!/bin/bash
+
+set -o errexit
+set -o nounset
+
+echo "Installing dependencies..."
 ## go (via https://github.com/travis-ci/gimme)
 eval "$(curl -sL https://raw.githubusercontent.com/travis-ci/gimme/master/gimme | GIMME_GO_VERSION=stable bash)" \
 && export PATH=$PATH:$HOME/go/bin
-
-## docker should already be installed on katacoda ubuntu image
-docker version
+echo
 
 ## kubectl
 apt-get update \
@@ -14,3 +17,40 @@ apt-get update \
 && apt-get update \
 && apt-get install -y kubectl \
 && go get -u -v sigs.k8s.io/kind
+echo
+
+echo "Creating kind cluster..."
+# kind cluster configuration
+cat <<EOF > cluster.yaml
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+networking:
+  disableDefaultCNI: true
+nodes:
+- role: control-plane
+  kubeadmConfigPatches:
+  - |
+    kind: InitConfiguration
+    nodeRegistration:
+      kubeletExtraArgs:
+        node-labels: "ingress-ready=true"
+  extraPortMappings:
+  - containerPort: 30000
+    hostPort: 80
+    listenAddress: "127.0.0.1"
+    protocol: TCP
+  - containerPort: 30001
+    hostPort: 443
+    listenAddress: "127.0.0.1"
+    protocol: TCP
+  - containerPort: 30002
+    hostPort: 15021
+    listenAddress: "127.0.0.1"
+    protocol: TCP
+EOF
+
+kind create cluster --config cluster.yaml
+echo
+
+echo "Installing Calico CNI..."
+kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
