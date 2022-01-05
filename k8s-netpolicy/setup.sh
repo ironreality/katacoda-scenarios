@@ -1,2 +1,3 @@
 ## installing dependencies
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+kubectl delete -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml \
+&& kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
