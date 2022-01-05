@@ -1,6 +1,6 @@
 {
-  "title": "Kind",
-  "description": "Explore Kubernetes-in-Docker and learn how to run local Kubernetes clusters using Docker containers as nodes",
+  "title": "Kind+Calico",
+  "description": "Explore kind with custom CNI",
   "details": {
     "steps": [
       { "title": "Set Up our Environment", "text": "step1.md" }
