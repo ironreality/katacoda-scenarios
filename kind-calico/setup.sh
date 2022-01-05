@@ -1,9 +1,5 @@
-#!/bin/bash
-
-set -o errexit
-set -o nounset
-
 echo "Installing dependencies..."
+echo "Installing go..."
 ## go (via https://github.com/travis-ci/gimme)
 eval "$(curl -sL https://raw.githubusercontent.com/travis-ci/gimme/master/gimme | GIMME_GO_VERSION=stable bash)" \
 && export PATH=$PATH:$HOME/go/bin
@@ -19,3 +15,10 @@ apt-get update \
 && go get -u -v sigs.k8s.io/kind
 
 echo "DEPS WERE INSTALLED!!!"
+
+echo "Creating kind cluster..."
+kind create cluster --config cluster.yaml
+echo
+
+echo "Installing Calico CNI..."
+kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
