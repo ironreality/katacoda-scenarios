@@ -1,5 +1,7 @@
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
+networking:
+  disableDefaultCNI: true
 nodes:
 - role: control-plane
   kubeadmConfigPatches:
@@ -9,15 +11,11 @@ nodes:
       kubeletExtraArgs:
         node-labels: "ingress-ready=true"
   extraPortMappings:
-  - containerPort: 31264
+  - containerPort: 30000
     hostPort: 80
     listenAddress: "127.0.0.1"
     protocol: TCP
-  - containerPort: 32227
+  - containerPort: 30001
     hostPort: 443
-    listenAddress: "127.0.0.1"
-    protocol: TCP
-  - containerPort: 30002
-    hostPort: 15021
     listenAddress: "127.0.0.1"
     protocol: TCP
