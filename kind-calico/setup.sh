@@ -17,3 +17,5 @@ apt-get update \
 && apt-get update \
 && apt-get install -y kubectl \
 && go get -u -v sigs.k8s.io/kind
+
+echo "DEPS WERE INSTALLED!!!"

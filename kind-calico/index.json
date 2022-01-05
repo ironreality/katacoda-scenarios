@@ -1,6 +1,6 @@
 {
-  "title": "Kind+Calico",
-  "description": "Explore kind with custom CNI",
+  "title": "Kubernetes Network Policies",
+  "description": "Explore k8s network policies",
   "details": {
     "steps": [
       { "title": "Set Up our Environment", "text": "step1.md" }
