@@ -19,9 +19,9 @@ apt-get update \
 && go get -u -v sigs.k8s.io/kind
 echo
 
-echo "Creating kind cluster..."
+echo "Creating configuration for the kind cluster..."
 # kind cluster configuration
-cat <<EOF > cluster.yaml
+cat>cluster.yaml<<EOF
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 networking:
@@ -49,6 +49,7 @@ nodes:
     protocol: TCP
 EOF
 
+echo "Creating kind cluster..."
 kind create cluster --config cluster.yaml
 echo
 

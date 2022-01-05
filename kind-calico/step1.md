@@ -1,8 +1,6 @@
 We're installing some dependencies in the background:
 
-- go
 - docker
-- kubectl
 - kind
 - Calico CNI
 
