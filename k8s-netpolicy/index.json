@@ -1,5 +1,5 @@
 {
-  "title": "Kubernetes Network Policies (kind)",
+  "title": "Kubernetes Network Policies",
   "description": "Explore k8s network policies",
   "details": {
     "steps": [
@@ -22,6 +22,6 @@
     "uilayout": "terminal"
   },
   "backend": {
-    "imageid": "ubuntu"
+    "imageid": "kubernetes-cluster-running:1.18"
   }
 }
