@@ -3,12 +3,20 @@
   "description": "Explore k8s network policies",
   "details": {
     "steps": [
-      { "title": "Provision k8s cluser",
+      {
+        "title": "Provision k8s cluser",
         "text": "step1.md",
         "courseData": "setup.sh",
         "code": "setup-foreground.sh"
       },
-      { "title": "Deploy a sample microservice app", "text": "step2.md" }
+      {
+        "title": "Deploy a sample microservice app",
+        "text": "step2.md"
+      },
+      {
+        "title": "Check networking without network policies deployed",
+        "text": "step3.md"
+      }
     ],
     "intro": {
       "text": "intro.md"
@@ -18,7 +26,10 @@
     },
     "assets": {
       "client": [
-        { "file": "*", "target": "~/" }
+        {
+          "file": "*",
+          "target": "~/"
+        }
       ]
     }
   },
