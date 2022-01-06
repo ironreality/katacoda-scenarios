@@ -11,7 +11,11 @@ apt-get update \
 && apt-get install -y kubectl \
 && go get -u -v sigs.k8s.io/kind \
 && kind create cluster --config cluster.yaml \
-&& kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml \
+&& curl -L --remote-name-all https://github.com/cilium/cilium-cli/releases/latest/download/cilium-linux-amd64.tar.gz{,.sha256sum} \
+&& sha256sum --check cilium-linux-amd64.tar.gz.sha256sum \
+&& sudo tar xzvfC cilium-linux-amd64.tar.gz /usr/local/bin \
+&& rm cilium-linux-amd64.tar.gz{,.sha256sum} \
+&& cilium install \
 && kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml \
 && kubectl patch service -n ingress-nginx ingress-nginx-controller --patch '{"spec": { "ports": [{"name":"http", "port":80, "nodePort":30000}, {"name":"https", "port":443, "nodePort":30001}]}}' \
 && echo "K8S CLUSTER HAS BEEN PROVISIONED!" && echo
