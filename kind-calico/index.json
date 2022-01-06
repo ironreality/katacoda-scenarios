@@ -6,7 +6,7 @@
       { "title": "Provision k8s cluser",
         "text": "step1.md",
         "courseData": "setup.sh",
-        "code": "setup-foregroung.sh"
+        "code": "setup-foreground.sh"
       },
       { "title": "Deploy a sample microservice app", "text": "step2.md" }
     ],
