@@ -18,5 +18,4 @@ apt-get update \
 && cilium install \
 && kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml \
 && kubectl patch service -n ingress-nginx ingress-nginx-controller --patch '{"spec": { "ports": [{"name":"http", "port":80, "nodePort":30000}, {"name":"https", "port":443, "nodePort":30001}]}}' \
-&& kubectl apply -f ingress.yaml -n default \
 && echo "K8S CLUSTER HAS BEEN PROVISIONED!" && echo
