@@ -1,9 +1,9 @@
 We're installing some dependencies in the background:
 
-- docker
-- kind
+- kind (k8s cluster distribution)
 - Calico CNI
+- nginx
 
-Verify that kind is installed correctly: `kind --version`{{execute}}
+The cluster provisioning takes from 4 to 7 minutes.
 
-Let's check our cluster's pods: `kubectl get pods --all-namespaces`{{execute}}
+After the cluster is deployed let's check our cluster's pods: `kubectl get pods --all-namespaces`{{execute}}
