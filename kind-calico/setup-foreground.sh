@@ -1,1 +1,1 @@
-while ! curl --silent http://localhost > /dev/null; do echo "Waiting until Nginx start..."; sleep 2; done; echo "Done"
+date; echo "Waiting until Nginx start..."; while ! curl --silent http://localhost > /dev/null; do sleep 5; done; date; echo "Done"
