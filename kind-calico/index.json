@@ -3,12 +3,15 @@
   "description": "Explore k8s network policies",
   "details": {
     "steps": [
-      { "title": "Set Up our Environment", "text": "step1.md" },
+      { "title": "Provision k8s cluser",
+        "text": "step1.md",
+        "courseData": "setup.sh",
+        "code": "setup-foregroung.sh"
+      },
       { "title": "Deploy a sample microservice app", "text": "step2.md" }
     ],
     "intro": {
-      "text": "intro.md",
-      "code": "setup.sh"
+      "text": "intro.md"
     },
     "finish": {
       "text": "finish.md"
