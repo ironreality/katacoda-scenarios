@@ -14,12 +14,16 @@
         "text": "step2.md"
       },
       {
-        "title": "Check networking without network policies deployed",
+        "title": "Kubernetes network without network policies deployed",
         "text": "step3.md"
       },
       {
-        "title": "Step 4",
+        "title": "Create our first network policy",
         "text": "step4.md"
+      },
+      {
+        "title": "Cross-namespace network policy",
+        "text": "step5.md"
       }
     ],
     "intro": {

@@ -41,6 +41,8 @@ spec:
       app: redis
 ```
 
+spec.ingress section defines match for the incoming traffic we'd like to allow
+
 Now apply the network policy:
 
 `kubectl apply -f redis-netpolicy.yaml`{{execute}}
