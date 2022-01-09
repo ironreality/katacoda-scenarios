@@ -1,9 +1,9 @@
 Now create a network policy for our frontend application.
 We need to allow traffic to the frontend pods from our ingress-controller i.e. nginx.
 
-Let's what labels has nginx - it's deployed in ingress-nginx namespace:
+Let's view what labels has nginx - it's deployed in ingress-nginx namespace:
 
-`kubectl get pods -n ingress-nginx --show-label`{{execute}}
+`kubectl get pods -n ingress-nginx --show-labels`{{execute}}
 
 Label **app.kubernetes.io/name=ingress-nginx** seems reasonable to match the
 nginx's traffic.
@@ -35,10 +35,7 @@ Now apply the network policy:
 
 To check out Guestbook open this URL: https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/
 
-As you can see - despite we've created the network policy we can't open
-Guestbook's index page anymore. Wha't wrong here? The issue is our nginx is
-deployed into another namespace which is 'ingress-nginx'. And we should reflect
-that in our frontend's network policy.
+We can open Guestbook that's fine but it's just our browser's cash. Trying to refresh the page you see - despite we've created the network policy we can't open Guestbook's index page anymore. What's wrong here? The issue is our nginx is deployed into another namespace which is 'ingress-nginx'. And we should reflect that in our frontend's network policy.
 
 Now re-create the frontend's network policy:
 
@@ -62,7 +59,7 @@ spec:
         matchLabels:
           app.kubernetes.io/name: ingress-nginx
 EOF
-```
+```{{execute}}
 
 The difference between the two network policy variants is namespaceSelector subsection of the ingress rule:
 

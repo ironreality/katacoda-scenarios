@@ -1,4 +1,4 @@
-Now, let's deploy a sample app Guestbook
+Now, let's deploy a sample app called Guestbook
 
 `kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/kubernetes-engine-samples/main/guestbook/all-in-one/guestbook-all-in-one.yaml -f ingress.yaml`{{execute}}
 

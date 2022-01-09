@@ -5,7 +5,7 @@ It does mean in the default k8s setup we can access **any pod from any pod** wit
 Let's check it - we'll spawn a shell in a test pod and connect to our Guestbook's
 redis service:
 
-`kubectl run -i --tty busybox --image=busybox -- sh`{{execute}}
+`kubectl run -i --tty busybox --image=busybox --labels app=test -- sh`{{execute}}
 
 `telnet redis-leader 6379`{{execute}}
 

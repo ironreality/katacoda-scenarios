@@ -41,7 +41,14 @@ spec:
       app: redis
 ```
 
-spec.ingress section defines match for the incoming traffic we'd like to allow
+spec.ingress section defines matching for the incoming traffic we'd like to allow:
+```
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: guestbook
+```
 
 Now apply the network policy:
 
@@ -55,6 +62,9 @@ To check the network policy is applied let's login to our test pod and connect t
 
 As you can see - we cannont connect to the redis anymore. The network policy
 works.
+
+Also it does mean the **network policy works as kind of whitelisting rule - it
+blocks any traffic except that we've allowed explicitly in the network policy manifest**
 
 Now stop the telnet process and exit the test pod:
 `^C`{{execute ctrl-seq}}
