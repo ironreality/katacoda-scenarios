@@ -11,4 +11,6 @@ redis service:
 
 As you can see - we can connect to the redis using telnet.
 
-Now exit the test pod: `exit`{{execute}}
+Now exit the redis and the test pod: 
+`quit`{{execute}}
+`exit`{{execute}}

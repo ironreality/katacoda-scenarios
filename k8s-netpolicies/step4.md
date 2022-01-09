@@ -1,11 +1,14 @@
 Now let's create our first network policy.
 
 Do you remember that any kubernetes object has its labels? :)
-When we create a network policy we're effectively defining firewall rules. One main difeerence between "traditional" firewall rules and Kubernetes network policies is that k8s network policies attach their rules using our pods' labels. Let's take a look on our Gustbook pods' labels before we go further:
+
+When we create a network policy we're effectively defining firewall rules. One main difference between "traditional" firewall rules and Kubernetes network policies is that k8s network policies attach their rules using our pods' labels.
+
+Let's take a look on our Gustbook pods' labels before we go further:
 
 `kubectl get pods --show-labels`{{execute}}
 
-Notice the 'app' labels - their value is 'redis' for the redis pods and
+Notice the 'app' labels in 'LABELS' column - their value is 'redis' for the redis pods and
 'guestbook' for the frontend pods.
 
 Now create a network policy allowing network traffic to 'redis' pods from 'guestbook' pods
@@ -29,7 +32,7 @@ spec:
 EOF
 ```{{execute}}
 
-To attach the policy rules to the redis pods we used pod's labels as 'selector':
+To attach the policy rules to the redis pods we used pod's labels as selector:
 
 ```yaml
 spec:
@@ -37,6 +40,10 @@ spec:
     matchLabels:
       app: redis
 ```
+
+Now apply the network policy:
+
+`kubectl apply -f redis-netpolicy.yaml`{{execute}}
 
 To check the network policy is applied let's login to our test pod and connect to the redis one more time:
 
@@ -47,4 +54,6 @@ To check the network policy is applied let's login to our test pod and connect t
 As you can see - we cannont connect to the redis anymore. The network policy
 works.
 
-Now exit the test pod: `exit`{{execute}}
+Now stop the telnet process and exit the test pod:
+`^C`{{execute ctrl-seq}}
+`exit`{{execute}}

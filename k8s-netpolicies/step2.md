@@ -6,6 +6,4 @@ Now wait until Guestbook is deployed - all the pods should be **READY** and in *
 
 To check out Guestbook open this URL: https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/
 
-![Gustbook app](./assets/guestbook_1.png)
-
 Try adding some guestbook entries by typing in a message, and clicking Submit. The message you typed appears in the frontend every time you open the URL.
