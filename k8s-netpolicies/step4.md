@@ -2,7 +2,7 @@ Now let's create our first network policy.
 
 Do you remember that any kubernetes object has its labels? :)
 
-When we create a network policy we're effectively defining firewall rules. One main difference between "traditional" firewall rules and Kubernetes network policies is that k8s network policies attach their rules using our pods' labels.
+When we create a network policy we're effectively defining firewall rules. The main difference between "traditional" firewall rules and Kubernetes network policies is that k8s network policies attach their firewall rules using our pods' labels.
 
 Let's take a look on our Gustbook pods' labels before we go further:
 
