@@ -1,1 +1,1 @@
-# Kubernetes Network Policies training
+# Kubernetes Network Policies Intro

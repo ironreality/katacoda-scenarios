@@ -1,8 +1,9 @@
 {
-  "title": "Kubernetes Network Policies Intro",
+  "title": "Kubernetes Network Policies Challenge",
   "description": "Explore k8s network policies",
   "difficulty": "Medium",
   "time": "20 minutes",
+  "type": "challenge@0.8",
   "details": {
     "steps": [
       {
