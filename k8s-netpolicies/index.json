@@ -28,7 +28,7 @@
         "text": "step5.md"
       },
       {
-        "title": "Changin the network policies",
+        "title": "Changing the network policies",
         "text": "step6.md",
         "verify": "step6-verify.sh",
         "answer": "step6-answer.md"
