@@ -9,8 +9,6 @@
       {
         "title": "Provision a k8s cluser",
         "text": "step1.md",
-        "courseData": "setup.sh",
-        "code": "setup-foreground.sh",
         "verify": "verify_1.sh"
       },
       {
@@ -20,7 +18,9 @@
       }
     ],
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "code": "setup-foreground.sh",
+      "courseData": "setup.sh"
     },
     "finish": {
       "text": "finish.md"
