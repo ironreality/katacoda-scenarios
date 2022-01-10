@@ -30,7 +30,8 @@
       {
         "title": "Changin the network policies",
         "text": "step6.md",
-        "verify": "step6-verify.sh"
+        "verify": "step6-verify.sh",
+        "answer": "step6-answer.md"
       }
     ],
     "intro": {
