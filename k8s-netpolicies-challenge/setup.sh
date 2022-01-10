@@ -18,4 +18,6 @@ apt-get update \
 && cilium install \
 && kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml \
 && kubectl patch service -n ingress-nginx ingress-nginx-controller --patch '{"spec": { "ports": [{"name":"http", "port":80, "nodePort":30000}, {"name":"https", "port":443, "nodePort":30001}]}}' \
+&& kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/kubernetes-engine-samples/main/guestbook/all-in-one/guestbook-all-in-one.yaml -f ingress.yaml \
+&& kubectl run -i --tty busybox --image=busybox --labels app=test -- sh \
 && echo "K8S CLUSTER HAS BEEN PROVISIONED!" && echo

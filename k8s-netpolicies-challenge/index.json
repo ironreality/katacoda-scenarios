@@ -7,12 +7,12 @@
   "details": {
     "steps": [
       {
-        "title": "Provision a k8s cluser",
+        "title": "Deploy network policies to the cluster",
         "text": "step1.md",
         "verify": "verify_1.sh"
       },
       {
-        "title": "Deploy a sample web app",
+        "title": "Allow access from the test pod to frontend",
         "text": "step2.md",
         "verify": "verify_2.sh"
       }
