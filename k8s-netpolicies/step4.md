@@ -69,3 +69,5 @@ blocks any traffic except that we've allowed explicitly in the network policy ma
 Now stop the telnet process and exit the test pod:
 `^C`{{execute ctrl-seq}}
 `exit`{{execute}}
+
+To view the namespace's network policies run ```kubectl get networkpolicies```{{execute}}

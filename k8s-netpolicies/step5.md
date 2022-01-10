@@ -76,4 +76,4 @@ Now apply the network policy:
 Check the Guestbook again: https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/
 Congratulations! It's refreshable again.
 
-
+To view the namespace's network policies run ```kubectl get networkpolicies```{{execute}}
