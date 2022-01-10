@@ -32,6 +32,10 @@
         "text": "step6.md",
         "verify": "step6-verify.sh",
         "answer": "step6-answer.md"
+      },
+      {
+        "title": "Lessons learned",
+        "text": "step7.md"
       }
     ],
     "intro": {
