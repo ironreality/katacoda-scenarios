@@ -1,5 +1,11 @@
 Now, let's deploy a sample app called Guestbook
 
+<details><summary>Guestbook architecture</summary>
+<p>
+![Guestbook app architecture diagram](./assets/guestbook_2.png)
+</p>
+</details>
+
 `kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/kubernetes-engine-samples/main/guestbook/all-in-one/guestbook-all-in-one.yaml -f ingress.yaml`{{execute}}
 
 Now wait until Guestbook is deployed - all the pods should be **READY** and in **Running** state: `kubectl get pods`{{execute}}
