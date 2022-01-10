@@ -1,4 +1,4 @@
-Now the challenge time!
+Now it's the challenge time!
 
 To pass this scenario's step you should modify 'redis' network policy to allow
 traffic from the test pod.
