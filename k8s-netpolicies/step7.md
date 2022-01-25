@@ -12,3 +12,5 @@ So far we've learned:
 
 * explore the great visual network policy editor from Cilium -
   https://editor.cilium.io/
+
+* great k8s network policies examples and explanations see [here](https://github.com/ahmetb/kubernetes-network-policy-recipes)
